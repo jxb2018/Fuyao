@@ -46,6 +46,8 @@
 - 测试IPC，可以仅启动 gateway，Engine，以及相应的函数。
 - 测试Fabric，需要启动gateway，Engine，Agent，以及相应的函数。
 
+在`scripts/`，我们提供了一个简单的脚本，可以在本地模拟一个两个节点的集群。您也可以根据以下步骤启动：
+
 ### 启动 gateway
 
 ```shell
@@ -91,7 +93,7 @@
 ### 在DPU上启动 Agent
 
 ```shell
-
+/tmp/Fuyao/agent/agent --config_file=/home/lgw/Fuyao/examples/01/service_config.json --guid=102
 ```
 
 ## 测试
