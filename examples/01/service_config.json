@@ -1,0 +1,99 @@
+{
+  "System": {
+    "timeoutAsMsForPoller": 8000,
+    "timeoutAsMsForDRC": 60000,
+    "pollTimeInternalAsUs": 10,
+    "memoryRegionSize": 1048576,
+    "messageSizeOfFabric": 1024
+  },
+  "Gateway": {
+    "gatewayIP": "127.0.0.1",
+    "httpPort": 8084,
+    "grpcPort": 50014,
+    "engineConnPort": 10014,
+    "numIOWorkers": 1,
+    "listenBacklog": 64
+  },
+  "Engines": [
+    {
+      "guid": 101,
+      "engineIP": "127.0.0.1",
+      "agentConnPort": 10024,
+      "engineTCPPort": -1,
+      "numIOWorkers": 1,
+      "gatewayConnPerWorker": 2,
+      "rootPathForIPC": "/dev/shm/ipc4",
+      "deviceName": "mlx5_0",
+      "devicePort": 1,
+      "deviceGidIndex": 3
+    },
+    {
+      "guid": 102,
+      "engineIP": "127.0.0.1",
+      "agentConnPort": 10028,
+      "engineTCPPort": -1,
+      "numIOWorkers": 1,
+      "gatewayConnPerWorker": 2,
+      "rootPathForIPC": "/dev/shm/ipc6",
+      "deviceName": "mlx5_0",
+      "devicePort": 1,
+      "deviceGidIndex": 3
+    }
+  ],
+  "Agents": [
+    {
+      "guid": 201,
+      "deviceName": "mlx5_0",
+      "devicePort": 1,
+      "deviceGidIndex": 3,
+      "numIOWorkers": 1,
+      "BindEngineGuid": 101
+    },
+    {
+      "guid": 202,
+      "deviceName": "mlx5_0",
+      "devicePort": 1,
+      "deviceGidIndex": 3,
+      "numIOWorkers": 1,
+      "BindEngineGuid": 102
+    }
+  ],
+  "Functions": [
+    {
+      "funcName": "exp01Fna",
+      "funcId": 1,
+      "minWorkers": 1,
+      "maxWorkers": 1
+    },
+    {
+      "funcName": "exp01Fnb",
+      "funcId": 2,
+      "minWorkers": 1,
+      "maxWorkers": 1
+    },
+    {
+      "funcName": "exp01Fnc",
+      "funcId": 3,
+      "minWorkers": 1,
+      "maxWorkers": 1
+    },
+    {
+      "funcName": "exp01Fnd",
+      "funcId": 4,
+      "minWorkers": 1,
+      "maxWorkers": 1
+    },
+    {
+      "funcName": "exp01Fne",
+      "funcId": 5,
+      "minWorkers": 1,
+      "maxWorkers": 1
+    },
+    {
+      "funcName": "exp01Fnf",
+      "funcId": 6,
+      "minWorkers": 1,
+      "maxWorkers": 1
+    }
+  ]
+}
